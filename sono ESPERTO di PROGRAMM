@@ -1,0 +1,41 @@
+SONO PROGRAMMATORE 
+import java.util.ArrayList;
+import java.util.List;
+
+class Canzone {
+    String titolo;
+    boolean collaborazioneConFabioRovazzi;
+
+    Canzone(String titolo, boolean collaborazioneConFabioRovazzi) {
+        this.titolo = titolo;
+        this.collaborazioneConFabioRovazzi = collaborazioneConFabioRovazzi;
+    }
+
+    @Override
+    public String toString() {
+        if (collaborazioneConFabioRovazzi) {
+            return titolo + " (feat. Fabio Rovazzi)";
+        } else {
+            return titolo;
+        }
+    }
+}
+
+public class NettspendCanzoni {
+    public static void main(String[] args) {
+        List<Canzone> listaCanzoni = new ArrayList<>();
+
+        // Aggiungiamo alcune canzoni fittizie
+        listaCanzoni.add(new Canzone("Canzone 1", false));
+        listaCanzoni.add(new Canzone("Canzone 2", true));  // Collaborazione con Fabio Rovazzi
+        listaCanzoni.add(new Canzone("Canzone 3", false));
+        listaCanzoni.add(new Canzone("Canzone 4", true));  // Collaborazione con Fabio Rovazzi
+        listaCanzoni.add(new Canzone("Canzone 5", false));
+
+        // Stampa tutte le canzoni
+        System.out.println("Tutte le canzoni di Nettspend:");
+        for (Canzone canzone : listaCanzoni) {
+            System.out.println(canzone);
+        }
+    }
+}
